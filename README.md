@@ -21,13 +21,13 @@ Developed by : J.JENISHA
 Reg.No. : 212222230056
 ```
 
-# Import the necessary packages
+### Import the necessary packages
 ``` Python
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 ```
-# Create the Text using cv2.putText
+### Create the Text using cv2.putText
 ```python
 img1=np.zeros((100,400), dtype='uint8')
 font=cv2.FONT_HERSHEY_SIMPLEX
@@ -35,18 +35,18 @@ cv2.putText(img1,'Euphoria',(5,70), font,2,(255),5,cv2.LINE_AA)
 plt.imshow(img1)
 plt.axis("off")
 ```
-# Create the structuring element
+### Create the structuring element
 ```python
 kernel=np.ones((5,5),np.uint8)
 kernel1=cv2.getStructuringElement(cv2.MORPH_CROSS,(7,7))
 ```
-# Use Opening operation
+### Use Opening operation
 ```python
 image1=cv2.morphologyEx(img1,cv2.MORPH_OPEN,kernel)
 plt.imshow(image1)
 plt.axis("off")
 ```
-# Use Closing Operation
+### Use Closing Operation
 ```python
 image2=cv2.morphologyEx(img1,cv2.MORPH_CLOSE,kernel)
 plt.imshow(image2)
